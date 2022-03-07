@@ -1,0 +1,23 @@
+{
+  "name": "zookeeper",
+  "version": "1.0.0",
+  "description": "module 11 coursework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagnificentRoast/zookeeper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagnificentRoast/zookeeper/issues"
+  },
+  "homepage": "https://github.com/MagnificentRoast/zookeeper#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
