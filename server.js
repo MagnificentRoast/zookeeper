@@ -16,7 +16,12 @@ app.get('/api/animals', (req, res) => {
 
 app.get('/api/animals/:id', (req, res) => {
   const result = findById(req.params.id, animals);
-  res.json(result);
+
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(404);
+  }
 });
 
 function filterByQuery(query, animalsArray) {
