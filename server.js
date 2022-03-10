@@ -9,6 +9,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming json data
 app.use(express.json());
+// uses express to return static pages in 'public'
+app.use(express.static('public'));
 
 function filterByQuery(query, animalsArray) {
   let personalityTraitsArray = [];
@@ -102,6 +104,22 @@ app.post('/api/animals', (req, res) => {
     res.json(animal);
   }
 });
+//when you first load from the server, it loads index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
+// loads animals.html when you type this address in
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'))
+});
+//loads zookeeper.html when you type this address in
+app.get('/zookeeper', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'))
+});
+// for all other cases so no errors will occur for the client
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);

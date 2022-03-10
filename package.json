@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/MagnificentRoast/zookeeper.git"
   },
-  "keywords": [],
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
