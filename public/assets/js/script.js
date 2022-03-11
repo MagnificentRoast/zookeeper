@@ -9,6 +9,7 @@ const handleAnimalFormSubmit = event => {
   const dietRadioHTML = $animalForm.querySelectorAll('[name="diet"]');
   let diet;
 
+
   for (let i = 0; i < dietRadioHTML.length; i += 1) {
     if (dietRadioHTML[i].checked) {
       diet = dietRadioHTML[i].value;
@@ -25,7 +26,7 @@ const handleAnimalFormSubmit = event => {
     personalityTraits.push(selectedTraits[i].value);
   }
   const animalObject = { name, species, diet, personalityTraits };
-
+ 
   fetch('/api/animals', {
     method: 'POST',
     headers: {
